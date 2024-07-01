@@ -11,12 +11,15 @@
  * Text Domain: books-plugin
  */
 
+use Books\Plugin\Admin\Enque;
+use Books\Plugin\Api;
+
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
 require_once __DIR__ . '/vendor/autoload.php';
-
+new Api();
 /**
  * The main plugin class
  */
@@ -74,13 +77,12 @@ final class Books {
      * @return void
      */
     public function init_plugin() {
-
         if ( is_admin() ) {
             new Books\Plugin\Admin();
         } else {
             new Books\Plugin\Frontend();
         }
-
+        new Enque();
     }
 
     /**

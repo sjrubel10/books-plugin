@@ -55,7 +55,6 @@ class Shortcode {
                 $output .= '<p><strong>Author:</strong> ' . esc_html($author) . '</p>';
                 $output .= '<p><strong>Published Date:</strong> ' . esc_html($published_date) . '</p>';
                 $output .= '<p><strong>Genre:</strong> ' . esc_html($genre) . '</p>';
-                $output .= '<div class="book-content">' . get_the_content() . '</div>';
                 $output .= '</div>';
             }
             $output .= '</div>';

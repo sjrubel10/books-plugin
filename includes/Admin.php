@@ -3,7 +3,6 @@
 namespace Books\Plugin;
 
 use Books\Plugin\Admin\AddBooksPost;
-use Books\Plugin\Admin\Enque;
 use Books\Plugin\Admin\Menu;
 
 /**
@@ -17,6 +16,6 @@ class Admin {
     function __construct() {
         new Menu();
         new AddBooksPost();
-        new Enque();
+
     }
 }
