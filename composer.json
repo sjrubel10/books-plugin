@@ -1,0 +1,20 @@
+{
+    "name": "books/plugin",
+    "description": "A plugin for Custom Post Types Books",
+    "type": "wordpress-plugin",
+    "license": "GPLv2",
+    "authors": [
+        {
+            "name": "rubel",
+            "email": "rubelcuet10@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Books\\Plugin\\": "includes/"
+        },
+        "files": []
+    }
+}

@@ -1,0 +1,37 @@
+.books-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.book-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.book-item h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.book-item p {
+    margin: 5px 0;
+}
+
+.book-item .book-content {
+    margin-top: 10px;
+}
+
+.book-thumbnail {
+    margin-bottom: 10px;
+}
+
+.book-thumbnail img {
+    width: 100%; /* Ensure the thumbnail image fills its container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px;
+}
