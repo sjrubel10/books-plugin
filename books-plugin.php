@@ -38,9 +38,7 @@ final class Books {
      */
     private function __construct() {
         $this->define_constants();
-
         register_activation_hook( __FILE__, [ $this, 'activate' ] );
-
         add_action( 'plugins_loaded', [ $this, 'init_plugin' ] );
 
     }
@@ -94,7 +92,6 @@ final class Books {
      */
     public function activate() {
         $installed = get_option( 'wd_books_plugin' );
-
         if ( ! $installed ) {
             update_option( 'wd_books_plugin', time() );
         }
