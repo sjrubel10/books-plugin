@@ -10,8 +10,8 @@ class Recent_Books_Widget extends WP_Widget {
 
         parent::__construct(
             'recent_books_widget',
-            __('Recent Books Widget', 'text_domain'),
-            array('description' => __('Displays recent bookss', 'text_domain'),)
+            __('Recent Books Widget', 'books-plugin'),
+            array('description' => __('Displays recent books', 'books-plugin'),)
         );
 
         add_action('widgets_init',[ $this, 'register_recent_books_widget']);
@@ -51,15 +51,15 @@ class Recent_Books_Widget extends WP_Widget {
     }
 
     public function form($instance) {
-        $title = !empty($instance['title']) ? $instance['title'] : __('Recent Books', 'text_domain');
+        $title = !empty($instance['title']) ? $instance['title'] : __('Recent Books', 'books-plugin');
         $number = !empty($instance['number']) ? $instance['number'] : 5;
         ?>
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e('Title:', 'text_domain'); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e('Title:', 'books-plugin'); ?></label>
             <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($title); ?>">
         </p>
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('number')); ?>"><?php _e('Number of posts to show:', 'text_domain'); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_id('number')); ?>"><?php _e('Number of posts to show:', 'books-plugin'); ?></label>
             <input class="widefat" id="<?php echo esc_attr($this->get_field_id('number')); ?>" name="<?php echo esc_attr($this->get_field_name('number')); ?>" type="number" value="<?php echo esc_attr($number); ?>">
         </p>
         <?php

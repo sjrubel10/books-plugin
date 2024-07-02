@@ -1,5 +1,5 @@
 === Books Plugin ===
-Contributors: yourname
+Contributors: Books Plugin
 Tags: books, custom post type, shortcode, widget, REST API
 Requires at least: 5.0
 Tested up to: 5.8
