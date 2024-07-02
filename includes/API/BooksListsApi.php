@@ -51,9 +51,8 @@ class BooksListsApi extends WP_REST_Controller{
         $search_data = $request->get_json_params();
         $limit = isset( $search_data['limit'] ) ? sanitize_text_field( $search_data['limit'] ) : 10 ;
         $result = update_option( 'books_per_page', $limit );
-//        error_log( print_r( [ '$result' => $result ], true ) );
 
-        return $result;
+        return new WP_REST_Response( $result, 200 );
     }
     public function get_book_lists( $request ){
 
