@@ -11,7 +11,7 @@ use WP_REST_Server;
 class BooksListsApi extends WP_REST_Controller{
     public function __construct() {
         $this->namespace = 'books/v1';
-        $this->rest_base = 'list ';
+        $this->rest_base = 'list';
     }
 
     public function register_routes() {

@@ -20,6 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 require_once __DIR__ . '/vendor/autoload.php';
 new Api();
+new \Books\Plugin\Widget\Recent_Books_Widget();
 /**
  * The main plugin class
  */
@@ -41,6 +42,7 @@ final class Books {
         register_activation_hook( __FILE__, [ $this, 'activate' ] );
 
         add_action( 'plugins_loaded', [ $this, 'init_plugin' ] );
+
     }
 
     /**
@@ -91,13 +93,13 @@ final class Books {
      * @return void
      */
     public function activate() {
-        $installed = get_option( 'wd_academy_installed' );
+        $installed = get_option( 'wd_books_plugin' );
 
         if ( ! $installed ) {
-            update_option( 'wd_academy_installed', time() );
+            update_option( 'wd_books_plugin', time() );
         }
 
-        update_option( 'wd_academy_version', WD_Books_VERSION );
+        update_option( 'wd_books_plugin', WD_Books_VERSION );
     }
 }
 

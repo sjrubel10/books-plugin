@@ -10,6 +10,15 @@ class Enque
 
     public function init_hooks(){
         add_action( 'init', array( $this, 'register_styles' ) );
+
+//        add_action( 'admin_enqueue_scripts', [ $this, 'books_admin_enqueue_scripts' ] );
+    }
+
+    function books_admin_enqueue_scripts() {
+        wp_localize_script('jobplace-script', 'myVars', array(
+            'rest_nonce'           => wp_create_nonce( 'wp_rest' ),
+            'site_url'           => get_site_url().'/',
+        ));
     }
 
     public function register_styles() {
