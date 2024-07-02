@@ -20,6 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 require_once __DIR__ . '/vendor/autoload.php';
 new Api();
+new \Books\Plugin\Widget\Recent_Books_Widget();
 /**
  * The main plugin class
  */
