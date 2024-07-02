@@ -23,15 +23,25 @@ function set_books_limit_per_page_in_options( setUrl, type, search_data ){
     });
 }
 
+function isPositiveInteger(value) {
+    var num = Number(value);
+    return Number.isInteger(num) && num > 0;
+}
 jQuery('#booksSettingsForm').on('click', '#booksSubmit', function( e ) {
     e.preventDefault();
 
-   jQuery("#booksSubmit").val('Saving...');
     let setUrl = myBooksVars.site_url+'/wp-json/books/v1/set_limit';
     let type = 'POST';
-    let search_data = {
-        'limit': jQuery("#books_per_page").val(),
-        'nonce': myBooksVars.rest_nonce,
+    let getLimit = jQuery("#books_per_page").val();
+    if ( isPositiveInteger( getLimit ) ) {
+        jQuery("#booksSubmit").val('Saving...');
+        let search_data = {
+            'limit': getLimit,
+            'nonce': myBooksVars.rest_nonce,
+        }
+        set_books_limit_per_page_in_options( setUrl, type, search_data);
+    }else{
+        alert(getLimit + " is not a positive integer. for updating this need to provide positive integer value");
     }
-    set_books_limit_per_page_in_options( setUrl, type, search_data);
+
 });
